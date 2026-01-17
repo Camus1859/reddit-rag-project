@@ -17,7 +17,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
