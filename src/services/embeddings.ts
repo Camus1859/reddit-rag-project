@@ -3,7 +3,7 @@ import "dotenv/config";
 
 const openai = new OpenAI();
 
-const getEmbeddingOfUserInput = async (text: string): Promise<number[]> => {
+const textToVector = async (text: string): Promise<number[]> => {
   const response = await openai.embeddings.create({
     model: "text-embedding-3-small",
     input: text,
@@ -23,7 +23,7 @@ const getEmbeddingOfUserInput = async (text: string): Promise<number[]> => {
   return embedding;
 };
 
-const getEmbeddings = async (texts: string[]): Promise<number[][]> => {
+const textsToVectors = async (texts: string[]): Promise<number[][]> => {
   const response = await openai.embeddings.create({
     model: "text-embedding-3-small",
     input: texts,
@@ -33,4 +33,4 @@ const getEmbeddings = async (texts: string[]): Promise<number[][]> => {
   return response.data.map((item) => item.embedding);
 };
 
-export { getEmbeddingOfUserInput, getEmbeddings };
+export { textToVector, textsToVectors };
