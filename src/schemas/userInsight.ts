@@ -1,0 +1,37 @@
+import { z } from "zod";
+
+const InterestSchema = z.object({
+  topic: z.string(),
+  confidence: z.enum(["high", "medium", "low"]),
+  evidence: z.string(),
+});
+
+const PersonalityTraitSchema = z.object({
+  trait: z.string(),
+  description: z.string(),
+});
+
+const SpeakingStyleSchema = z.object({
+  tone: z.string(),
+  vocabulary: z.string(),
+  patterns: z.array(z.string()),
+});
+
+const TopTopicSchema = z.object({
+  name: z.string(),
+  frequency: z.string(),
+});
+
+const UserInsightSchema = z.object({
+  message: z.string(),
+  interests: z.array(InterestSchema).optional(),
+  personalityTraits: z.array(PersonalityTraitSchema).optional(),
+  speakingStyle: SpeakingStyleSchema.optional(),
+  topTopics: z.array(TopTopicSchema).optional(),
+  summary: z.string().optional(),
+});
+
+type UserInsight = z.infer<typeof UserInsightSchema>;
+
+export { UserInsightSchema };
+export type { UserInsight };
