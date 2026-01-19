@@ -194,6 +194,7 @@ function App() {
     const currentStep = loadingSteps[loadingStep]
     return (
       <div className="container">
+        <h1>YouTube RAG Analyzer</h1>
         <div className="loading">
           <div className="spinner"></div>
           <div className="loading-steps">
@@ -216,6 +217,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1>YouTube RAG Analyzer</h1>
       <div className="chat-header">
         <p className="chat-title">Analyzing: {channelInput}</p>
         <button className="new-btn" onClick={handleNew}>New</button>
