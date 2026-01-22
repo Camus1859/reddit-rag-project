@@ -199,7 +199,7 @@ h1 {
 
 .step-content {
   flex: 1;
-  min-width: 0;
+  min-width: 150px;
 }
 
 .step-title {
@@ -218,6 +218,7 @@ h1 {
   font-size: 1rem;
   color: #888;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  word-break: break-word;
 }
 
 .chat-header {
@@ -433,4 +434,21 @@ input:disabled {
 
 .tooltip-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .loading {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .loading-step {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .step-indicator {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
 }
