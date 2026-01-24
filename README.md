@@ -1,6 +1,7 @@
 # YouTube RAG Analyzer
 
-A full-stack RAG application that ingests YouTube channel content and enables conversational Q&A powered by AI.
+A full-stack [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
+ application that ingests YouTube channel content and enables conversational Q&A powered by AI.
 
 **🚀 Live Demo:** [https://relaxed-llama-ebdc94.netlify.app/](https://relaxed-llama-ebdc94.netlify.app/)
 
