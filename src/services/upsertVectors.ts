@@ -7,7 +7,8 @@ const BATCH_SIZE = 50;
 
 const upsertChunks = async (input: string) => {
   const namespace = getNamespaceFromInput(input);
-  const chunks = await fireItUp(input);
+  const rawChunks = await fireItUp(input);
+  const chunks = rawChunks.filter(c => c && c.trim().length > 0);
 
   if (chunks.length === 0) {
     throw new Error("No transcripts found for this channel. The channel may not exist or may not have any videos with captions.");
