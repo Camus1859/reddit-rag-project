@@ -27,8 +27,14 @@ const textsToVectors = async (texts: string[]): Promise<number[][]> => {
   const BATCH_SIZE = 100;
   const allEmbeddings: number[][] = [];
 
-  for (let i = 0; i < texts.length; i += BATCH_SIZE) {
-    const batch = texts.slice(i, i + BATCH_SIZE);
+  const validTexts = texts.filter(t => t && t.trim().length > 0);
+
+  if (validTexts.length === 0) {
+    throw new Error("No valid text chunks to embed");
+  }
+
+  for (let i = 0; i < validTexts.length; i += BATCH_SIZE) {
+    const batch = validTexts.slice(i, i + BATCH_SIZE);
     const response = await openai.embeddings.create({
       model: "text-embedding-3-small",
       input: batch,
